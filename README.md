@@ -20,7 +20,7 @@ Our core observation is that two factors have been causing this scaling failure.
 - There're actually *many* cross-attention modules in a diffusion backbone, and the maps they produce should be aggregated via weighted average. Conventional methods do this with a set of hand-tuned weights, which becomes impractical in more complex diffusion models. Our solution is to *automatically* derive weights from the numerical relations between diffusion activations.
 - The score scales of different tokens are in fact *inconsistent*, making direct comparison of the raw scores not reliable. Previous methods have considered this, but *only partially*. We additionally take the scale of semantic special tokens like \<sos\> into consideration.  
 
-For more details, you are welcome to our paper!  
+For more details, you are welcome to our [paper](https://arxiv.org/abs/2603.06178)!  
 
 ## Install
 **Step 1**: Install [Generic-Diffusion-Feature](https://github.com/Darkbblue/generic-diffusion-feature).  
@@ -106,4 +106,15 @@ We provide a highly customizable script in `src-additional/attention-observation
 All the configs are directly integrated into the script, put in the top few lines of code.
 
 ## Citation
-placeholder
+Currently we provide an ArXiV citation bibtex. When the official CVPR release is public, we will replace it with a CVPR citation format.  
+```
+@misc{meng2026makingtrainingfreediffusionsegmentors,
+      title={Making Training-Free Diffusion Segmentors Scale with the Generative Power}, 
+      author={Benyuan Meng and Qianqian Xu and Zitai Wang and Xiaochun Cao and Longtao Huang and Qingming Huang},
+      year={2026},
+      eprint={2603.06178},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.06178}, 
+}
+```
